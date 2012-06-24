@@ -29,10 +29,10 @@ class MainHandler(webapp2.RequestHandler):
 
 class TestHandler(webapp2.RequestHandler):
     def get(self):
-        #q = self.request.get("q")
-        #self.response.out.write(q)
-		self.response.headers['Content-Type']='text/plain'
-		self.response.out.write(self.request)
+        q = self.request.get("q")
+        self.response.out.write(q)
+        #self.response.headers['Content-Type']='text/plain'
+        #self.response.out.write(self.request)
 
 app = webapp2.WSGIApplication([('/', MainHandler),
                                ('/testform', TestHandler)],
